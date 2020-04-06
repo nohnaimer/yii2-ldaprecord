@@ -1,0 +1,34 @@
+{
+    "name": "nohnaimer/yii2-ldaprecord",
+    "description": "Обертка для библиотеки LdapRecord",
+    "keywords": [
+        "yii2",
+        "extension",
+        "ldap",
+        "active directory",
+        "openldap",
+        "ldaprecord"
+    ],
+    "homepage": "https://github.com/nohnaimer/yii2-ldaprecord",
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Maksim Astapenko",
+            "email": "actapenko@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "yiisoft/yii2": ">=2.0.13",
+        "directorytree/ldaprecord": "1.2.*"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "nohnaimer\\ldaprecord\\": "src"
+        }
+    }
+}
