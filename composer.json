@@ -1,6 +1,6 @@
 {
     "name": "nohnaimer/yii2-ldaprecord",
-    "description": "Обертка для библиотеки LdapRecord",
+    "description": "Yii2 extension for library LdapRecord",
     "keywords": [
         "yii2",
         "extension",
