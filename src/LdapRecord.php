@@ -3,9 +3,11 @@
 namespace nohnaimer\ldaprecord;
 
 use yii\base\Component;
+use LdapRecord\Container;
 use LdapRecord\Connection;
 use LdapRecord\DetailedError;
 use LdapRecord\Auth\BindException;
+use LdapRecord\ConnectionException;
 
 /**
  * Class LdapRecord
@@ -16,52 +18,37 @@ use LdapRecord\Auth\BindException;
 class LdapRecord extends Component
 {
     /**
-     * @var Connection
+     * @var array
      */
-    protected $connection;
+    public $providers;
+    /**
+     * @var Connection[]
+     */
+    protected $connections = [];
 
     /**
-     * {@inheritdoc}
+     * @param string $name
+     * @return Connection
+     * @throws BindException
+     * @throws ConnectionException
      */
-    public function __construct($config = [])
+    public function initProvider($name)
     {
-        $this->connection = new Connection($config);
+        if (isset($this->connections[$name])) {
+            return $this->connections[$name];
+        }
+
+        $config = $this->providers[$name];
+        $connection = new Connection($config);
         try {
-            $this->connection->connect();
+            $connection->connect();
         } catch (BindException $e) {
             /** @var DetailedError $error */
             $error = $e->getDetailedError();
             throw new BindException("Code: {$error->getErrorCode()}, message: {$error->getErrorMessage()}, diagnostic: {$error->getDiagnosticMessage()}");
         }
 
-        parent::__construct();
-    }
-
-    /**
-     * @param string $name
-     * @return mixed
-     */
-    public function __get($name)
-    {
-        return $this->connection->$name;
-    }
-
-    /**
-     * @param string $name
-     * @param mixed $value
-     */
-    public function __set($name, $value)
-    {
-        $this->connection->$name = $value;
-    }
-
-    /**
-     * @param string $name
-     * @param array $params
-     * @return mixed
-     */
-    public function __call($name, $params)
-    {
-        return call_user_func_array([$this->connection, $name], $params);
+        Container::addConnection($connection, $name);
+        return $this->connections[$name] = $connection;
     }
 }
