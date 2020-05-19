@@ -21,7 +21,7 @@
     "require": {
         "php": ">=5.5.0",
         "yiisoft/yii2": ">=2.0.13",
-        "directorytree/ldaprecord": "dev-master"
+        "directorytree/ldaprecord": "1.7.*"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master"
