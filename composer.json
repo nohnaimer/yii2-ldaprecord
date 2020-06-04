@@ -21,7 +21,7 @@
     "require": {
         "php": ">=5.5.0",
         "yiisoft/yii2": ">=2.0.13",
-        "directorytree/ldaprecord": "1.7.*"
+        "directorytree/ldaprecord": "dev-master as 1.7.x-@dev"
     },
     "require-dev": {
         "roave/security-advisories": "dev-master"
@@ -29,6 +29,11 @@
     "autoload": {
         "psr-4": {
             "nohnaimer\\ldaprecord\\": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
         }
     }
 }
