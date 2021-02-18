@@ -19,8 +19,8 @@
         }
     ],
     "require": {
-        "php": ">=5.5.0",
-        "yiisoft/yii2": ">=2.0.13",
+        "php": ">=7.2",
+        "yiisoft/yii2": "2.0.*",
         "directorytree/ldaprecord": "2.1.*"
     },
     "require-dev": {
@@ -29,6 +29,12 @@
     "autoload": {
         "psr-4": {
             "nohnaimer\\ldaprecord\\": "src"
+        }
+    },
+    "repositories": {
+        "asset": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
     },
     "extra": {
