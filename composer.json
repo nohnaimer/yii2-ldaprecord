@@ -21,10 +21,10 @@
     "require": {
         "php": ">=7.2",
         "yiisoft/yii2": "2.0.*",
-        "directorytree/ldaprecord": "2.3.*"
+        "directorytree/ldaprecord": "2.4.*"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-master"
+        "roave/security-advisories": "dev-latest"
     },
     "autoload": {
         "psr-4": {
