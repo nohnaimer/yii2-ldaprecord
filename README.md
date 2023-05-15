@@ -1,5 +1,9 @@
 Yii2 LdapRecord extension
 ====================
+[![Latest Stable Version](https://poser.pugx.org/nohnaimer/yii2-ldaprecord/v/stable)](https://packagist.org/packages/nohnaimer/yii2-ldaprecord)
+[![License](https://poser.pugx.org/nohnaimer/yii2-ldaprecord/license)](https://packagist.org/packages/nohnaimer/yii2-ldaprecord)
+[![Total Downloads](https://poser.pugx.org/nohnaimer/yii2-ldaprecord/downloads)](https://packagist.org/packages/nohnaimer/yii2-ldaprecord)
+
 [Documentation](https://ldaprecord.com/docs/) for LdapRecord
 
 Installation
